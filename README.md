@@ -16,8 +16,20 @@ Which serves as a multiclass classifier , we have also integrated the existing s
 Detection and deployed in state of art IoT & edge deployment solution, we also validated our proposed
 Camera placement strategy by the actual driving scenarios video and sensor simulation.
 
+## Reference architechure 
+
+![Project-10-Final Arch Diagram](https://user-images.githubusercontent.com/47913360/157132132-5890ef09-1d52-47d5-953e-8eb4002a93a6.png)
+
+
+
 ## Dataset 
 
-Insert gif or link to demo
+The sample of the dataset that has been created for the project 
 
 ![GIF](docs/readmecontest/all-class-samples.gif)
+
+
+## Demo 
+
+![GIF](docs/readmecontest/demo-compressed.gif)
+
