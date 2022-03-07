@@ -20,4 +20,4 @@ Camera placement strategy by the actual driving scenarios video and sensor simul
 
 Insert gif or link to demo
 
-![GIF](https://imgur.com/a/zEyAMVU)
+![GIF](docs/readmecontest/all-class-samples.gif)
