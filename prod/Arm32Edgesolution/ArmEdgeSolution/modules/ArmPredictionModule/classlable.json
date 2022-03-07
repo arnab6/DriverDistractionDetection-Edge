@@ -1,0 +1,13 @@
+{
+    "classlables": [
+        "001-NormalDriving",
+        "002-TalkingToPhoneLeft",
+        "003-TalkingToPhoneRight",
+        "004-TalkingWithCopassenger",
+        "005-Leanbackandtalk",
+        "006-Drinking",
+        "007-Drowsy",
+        "008-SmartPhone",
+        "009-Dashboardusage"
+    ]
+}

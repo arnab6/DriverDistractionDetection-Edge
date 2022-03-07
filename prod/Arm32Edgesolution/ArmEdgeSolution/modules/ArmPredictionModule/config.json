@@ -1,0 +1,9 @@
+{
+
+"classlablepath": "classlable.json",
+"tflite_model_path" : "mobileNetv2-model-2-Date-11-02-22_Acc-98-batch-32-dataset-70-15-15-litemodel.tflite",
+"input_video_location" : "/app/project-10/input/All-classed-merged-4-3-filmora-30FPS.mp4",
+"output_destination" :  "/app/project-10/output/outputvideo.avi",
+"target_video_fps" : 10
+
+}
