@@ -1,22 +1,20 @@
-""" 
-import cv2
-camera = cv2.VideoCapture(0)
-for i in range(10):
-      return_value, image = camera.read()
-      cv2.imwrite('opencv'+str(i)+'.png', image)
-del(camera)
-"""
 
 
 import cv2
 
-cam = cv2.VideoCapture(1)
 
-cv2.namedWindow("test")
+cam = cv2.VideoCapture(1)#reading camera feed 
+cv2.namedWindow("test") #creating a window where images will be displayed 
 
 img_counter = 0
 
 while True:
+    """
+     The part of the code reads a frame , displays a frame 
+     if space is pressed it stores that image into disk 
+     to quit escpae needs to be pressed 
+     
+    """
     ret, frame = cam.read()
     if not ret:
         print("failed to grab frame")
