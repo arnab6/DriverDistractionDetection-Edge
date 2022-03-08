@@ -24,7 +24,11 @@ class_lables = None
 
 
 def read_class_lables(path):
-
+    
+    """
+    This method reads the class lables from the json file 
+    in case of file missing or exception it will handle it 
+    """
     global class_lables
     
     global class_lables
@@ -37,6 +41,12 @@ def read_class_lables(path):
 
 
 def init():
+
+    """
+    This method initialise the code , it reads the config file & class label 
+    then call the method predict from video with all the argument to start the image analysis
+
+    """
    
     global config
     with open("config.json",'r',encoding='utf-8') as r:
@@ -55,12 +65,22 @@ def init():
 
 
 def prepare_image(file):
+
+    """
+    This methods does the pre-processing of the image using the mobilenet v2 preprocessor, 
+    this method is for image only. 
+    """
     img = image.load_img(file,target_size=(224, 224))
     img_array = image.img_to_array(img)
     img_array_expanded_dims = np.expand_dims(img_array, axis=0)
     return tf.keras.applications.mobilenet_v2.preprocess_input(img_array_expanded_dims)
 
 def prepare_image_from_video_frame(file):
+    """
+    This method takes extracted video frame from OPENCV, 
+    then convert the color space to BGR to RGB, which is suitable for preprocessing, 
+    finally the image is preprocessed using mobilenet v2 preprocessor
+    """
     cvt_image =  cv2.cvtColor(file, cv2.COLOR_BGR2RGB)
     im_pil = Image.fromarray(cvt_image)
     im_resized = im_pil.resize((224, 224))
@@ -71,6 +91,12 @@ def prepare_image_from_video_frame(file):
 
 
 def create_iot_message(class_index):
+
+    """
+    This method creates payload for IoT, if the class is 0th class that is normal driving, it wont create
+    any alert, if its not, it will create mesasage with alert, basically here we making multiclass classification 
+    a binary classification in terms of alert, but the class information is preserved. 
+    """
     
     if class_index == 0 :
         
@@ -89,6 +115,11 @@ def create_iot_message(class_index):
     
 
 def send_message(index):
+
+    """
+    This method creates the azure iot message payload and sends to the Module output 
+
+    """
      
     message_json  = create_iot_message(index)
     formatted_iot_message = Message(json.dumps(message_json))
@@ -103,6 +134,12 @@ def predict_from_video(input_video_path,
                       tfmodel_path, 
                       target_fps 
                       ):
+
+
+    """
+    This methods, takes input video, create frame by frame prediction, sends alert or no-alert analytics to the 
+    Alert Module, finally creates a video which class label embedded on that ! 
+    """
 
 
     predicted_image_array = []
