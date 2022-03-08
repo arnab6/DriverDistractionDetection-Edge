@@ -26,10 +26,10 @@ Camera placement strategy by the actual driving scenarios video and sensor simul
 
 The sample of the dataset that has been created for the project 
 
-![GIF](docs/readmecontest/all-class-samples.gif)
+![GIF](docs/readmecontext/all-class-samples.gif)
 
 
 ## Demo 
 
-![GIF](docs/readmecontest/demo-compressed.gif)
+![GIF](docs/readmecontext/demo-compressed.gif)
 
